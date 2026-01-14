@@ -12,6 +12,15 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-4' : 'bg-transparent py-7'}`}>
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
@@ -24,19 +33,19 @@ const Header: React.FC = () => {
         </div>
         
         <nav className="hidden md:flex items-center gap-10 text-[15px] font-bold text-gray-500">
-          <a href="#audit" className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">Profile Audit</a>
-          <a href="#features" className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">AI Tools</a>
-          <a href="#stories" className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">Viral Stories</a>
-          <a href="#support" className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">Support</a>
+          <button onClick={() => scrollTo('audit')} className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">Profile Audit</button>
+          <button onClick={() => scrollTo('features')} className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">AI Tools</button>
+          <button onClick={() => scrollTo('stories')} className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">Viral Stories</button>
+          <button onClick={() => scrollTo('support')} className="hover:text-purple-600 transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-purple-600 hover:after:w-full after:transition-all">Support</button>
         </nav>
 
         <div className="flex items-center gap-4">
-          <a 
-            href="#download" 
+          <button 
+            onClick={() => scrollTo('download')}
             className="bg-[#1C1C1C] text-white px-7 py-3 rounded-2xl font-bold text-sm hover:bg-gray-800 transition-all active:scale-95 shadow-xl"
           >
             Start Growing
-          </a>
+          </button>
         </div>
       </div>
     </header>

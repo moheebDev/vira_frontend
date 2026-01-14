@@ -4,22 +4,26 @@ import React from 'react';
 const Footer: React.FC = () => {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
     <footer className="pt-24 pb-12 bg-[#FDFCFE] border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-1 lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+          <div className="col-span-1 lg:col-span-2">
             <div 
               className="flex items-center gap-2 mb-6 cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => scrollTo('top')}
             >
               <div className="w-10 h-10 bg-vira-gradient rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">V</div>
               <span className="text-2xl font-bold tracking-tight text-[#1C1C1C]">Vira</span>
             </div>
-            <p className="text-gray-500 leading-relaxed mb-8">
+            <p className="text-gray-500 leading-relaxed mb-8 max-w-sm">
               Empowering the next generation of creators with proprietary AI tools designed for organic, explosive growth across all social platforms.
             </p>
             <div className="flex gap-4">
@@ -32,20 +36,20 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="font-black text-[#1C1C1C] mb-6 uppercase text-xs tracking-widest">Growth Tools</h5>
             <ul className="space-y-4 text-gray-500 font-bold text-sm">
-              <li><button onClick={() => scrollTo('audit')} className="hover:text-purple-600 transition-colors">Deep Profile Audit</button></li>
-              <li><button onClick={() => scrollTo('features')} className="hover:text-purple-600 transition-colors">AI Caption Engine</button></li>
-              <li><button onClick={() => scrollTo('hashtags')} className="hover:text-purple-600 transition-colors">Hashtag Intelligence</button></li>
-              <li><button onClick={() => scrollTo('stories')} className="hover:text-purple-600 transition-colors">Success Stories</button></li>
+              <li><button onClick={() => scrollTo('audit')} className="hover:text-purple-600 transition-colors block w-full text-left">Deep Profile Audit</button></li>
+              <li><button onClick={() => scrollTo('features')} className="hover:text-purple-600 transition-colors block w-full text-left">AI Caption Engine</button></li>
+              <li><button onClick={() => scrollTo('hashtags')} className="hover:text-purple-600 transition-colors block w-full text-left">Hashtag Intelligence</button></li>
+              <li><button onClick={() => scrollTo('stories')} className="hover:text-purple-600 transition-colors block w-full text-left">Success Stories</button></li>
             </ul>
           </div>
 
           <div>
-            <h5 className="font-black text-[#1C1C1C] mb-6 uppercase text-xs tracking-widest">Resources</h5>
+            <h5 className="font-black text-[#1C1C1C] mb-6 uppercase text-xs tracking-widest">Legal</h5>
             <ul className="space-y-4 text-gray-500 font-bold text-sm">
-              <li><button onClick={() => scrollTo('how-it-works')} className="hover:text-purple-600 transition-colors">Getting Started</button></li>
-              <li><a href="#" className="hover:text-purple-600 transition-colors">Creator Academy</a></li>
-              <li><button onClick={() => scrollTo('support')} className="hover:text-purple-600 transition-colors">Help Center</button></li>
-              <li><a href="#" className="hover:text-purple-600 transition-colors">Affiliate Portal</a></li>
+              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Privacy Policy</a></li>
+              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Terms of Service</a></li>
+              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Cookie Policy</a></li>
+              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Refund Policy</a></li>
             </ul>
           </div>
 
