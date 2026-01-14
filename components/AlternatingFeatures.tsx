@@ -27,8 +27,8 @@ const features = [
     id: "hashtags",
     title: "Trending Hashtag Intelligence",
     subtitle: "Reach the right audience, organically.",
-    description: "Our hashtag generator finds 'Goldilocks' tags—those with high engagement but low competition—perfectly suited for your account size. Optimize for Facebook, TikTok, and Instagram with one tap.",
-    image: "https://images.unsplash.com/photo-1611926653458-39295b224271?q=80&w=1200&auto=format&fit=crop", 
+    description: "Our AI-powered hashtag generator analyzes millions of posts to find the perfect 'Goldilocks' tags—high engagement with low competition—tailored to your account size and niche. Get optimized hashtag sets for Facebook, TikTok, and Instagram with intelligent recommendations that maximize your organic reach.",
+    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1200&auto=format&fit=crop", 
     icon: <Hash className="text-pink-600" />,
     stats: "Organic Reach x5",
     platforms: ["Global Trends", "TikTok Tags", "IG Reels Tags"]

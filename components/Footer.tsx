@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -46,10 +47,10 @@ const Footer: React.FC = () => {
           <div>
             <h5 className="font-black text-[#1C1C1C] mb-6 uppercase text-xs tracking-widest">Legal</h5>
             <ul className="space-y-4 text-gray-500 font-bold text-sm">
-              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Privacy Policy</a></li>
-              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Terms of Service</a></li>
-              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Cookie Policy</a></li>
-              <li><a href="#download" onClick={() => scrollTo('download')} className="hover:text-purple-600 transition-colors block py-1">Refund Policy</a></li>
+              <li><Link to="/privacy-policy" className="hover:text-purple-600 transition-colors block py-1">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions" className="hover:text-purple-600 transition-colors block py-1">Terms of Service</Link></li>
+              <li><Link to="/cookies" className="hover:text-purple-600 transition-colors block py-1">Cookie Policy</Link></li>
+              <li><Link to="/refund-policy" className="hover:text-purple-600 transition-colors block py-1">Refund Policy</Link></li>
             </ul>
           </div>
 
