@@ -28,7 +28,7 @@ const Header: React.FC = () => {
           className="flex items-center gap-3 group cursor-pointer" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="w-11 h-11 bg-vira-gradient rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">V</div>
+          <img src="/assets/logo.png" alt="Vira Logo" className="w-11 h-11 rounded-full group-hover:rotate-12 transition-transform duration-300" />
           <span className="text-2xl font-black tracking-tight text-[#1C1C1C]">Vira</span>
         </div>
         

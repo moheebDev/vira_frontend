@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
               className="flex items-center gap-2 mb-6 cursor-pointer"
               onClick={() => scrollTo('top')}
             >
-              <div className="w-10 h-10 bg-vira-gradient rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">V</div>
+              <img src="/assets/logo.png" alt="Vira Logo" className="w-10 h-10 rounded-full" />
               <span className="text-2xl font-bold tracking-tight text-[#1C1C1C]">Vira</span>
             </div>
             <p className="text-gray-500 leading-relaxed mb-8 max-w-sm">
