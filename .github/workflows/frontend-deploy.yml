@@ -1,0 +1,56 @@
+name: Vira Frontend Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Build frontend
+      - name: Build frontend
+        run: npm run build
+
+      # 5️⃣ Deploy to server
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            set -e
+            echo "📁 Navigate to frontend folder"
+            cd ~/vira_frontend
+
+            echo "⬇️ Pull latest code"
+            git pull origin main
+
+            echo "📦 Install dependencies"
+            npm ci
+
+            echo "🏗 Build frontend"
+            npm run build
+
+            echo "♻️ Reload PM2 process"
+            pm2 reload vira_frontend || pm2 start server.js --name vira_frontend
+            pm2 save
+
+            echo "✅ Frontend deployment successful"
