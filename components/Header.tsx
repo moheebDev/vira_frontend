@@ -28,8 +28,8 @@ const Header: React.FC = () => {
           className="flex items-center gap-3 group cursor-pointer" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <img src="/assets/logo.png" alt="Vira Logo" className="w-11 h-11 rounded-full group-hover:rotate-12 transition-transform duration-300" />
-          <span className="text-2xl font-black tracking-tight text-[#1C1C1C]">Vira</span>
+          <img src="/dist/assets/app_logo.jpg" alt="Vira Logo" className="w-11 h-11 rounded-full group-hover:rotate-12 transition-transform duration-300" />
+          <span className="text-2xl font-black tracking-tight text-[#1C1C1C]">HashTag Expert</span>
         </div>
         
         <nav className="hidden md:flex items-center gap-10 text-[15px] font-bold text-gray-500">

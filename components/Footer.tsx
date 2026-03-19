@@ -17,23 +17,23 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
           <div className="col-span-1 lg:col-span-2">
-            <div 
+            <div
               className="flex items-center gap-2 mb-6 cursor-pointer"
               onClick={() => scrollTo('top')}
             >
-              <img src="/assets/logo.png" alt="Vira Logo" className="w-10 h-10 rounded-full" />
-              <span className="text-2xl font-bold tracking-tight text-[#1C1C1C]">Vira</span>
+              <img src="/dist/assets/app_logo.jpg" alt="Vira Logo" className="w-10 h-10 rounded-full" />
+              <span className="text-2xl font-bold tracking-tight text-[#1C1C1C]">HashTag Expert</span>
             </div>
             <p className="text-gray-500 leading-relaxed mb-8 max-w-sm">
               Empowering the next generation of creators with proprietary AI tools designed for organic, explosive growth across all social platforms.
             </p>
             <div className="flex gap-4">
-               {['fb', 'ig', 'tk', 'tw'].map(s => (
-                 <div key={s} className="w-10 h-10 bg-white rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-purple-600 hover:border-purple-100 transition-all cursor-pointer shadow-sm capitalize font-bold text-xs">{s}</div>
-               ))}
+              {['fb', 'ig', 'tk', 'tw'].map(s => (
+                <div key={s} className="w-10 h-10 bg-white rounded-full border border-gray-100 flex items-center justify-center text-gray-400 hover:text-purple-600 hover:border-purple-100 transition-all cursor-pointer shadow-sm capitalize font-bold text-xs">{s}</div>
+              ))}
             </div>
           </div>
-          
+
           <div>
             <h5 className="font-black text-[#1C1C1C] mb-6 uppercase text-xs tracking-widest">Growth Tools</h5>
             <ul className="space-y-4 text-gray-500 font-bold text-sm">
@@ -63,16 +63,34 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        
-        <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-400 text-xs font-bold uppercase tracking-widest">
-            © 2026 Vira AI Technologies. Built for Creators.
-          </p>
-          <div className="flex gap-4">
-             <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8 opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-             <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" className="h-8 opacity-70 hover:opacity-100 transition-opacity cursor-pointer" />
-          </div>
-        </div>
+
+       <div className="flex gap-4">
+  <a
+    href="https://apps.apple.com/pk/app/hashtag-expert-ai/id6758021359"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block z-10"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+      alt="App Store"
+      className="h-8 opacity-70 hover:opacity-100 transition-opacity cursor-pointer pointer-events-auto"
+    />
+  </a>
+
+  <a
+    href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block z-10"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+      alt="Play Store"
+      className="h-8 opacity-70 hover:opacity-100 transition-opacity cursor-pointer pointer-events-auto"
+    />
+  </a>
+</div>
       </div>
     </footer>
   );
